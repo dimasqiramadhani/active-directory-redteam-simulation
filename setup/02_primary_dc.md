@@ -45,6 +45,15 @@ Buka **PowerShell sebagai Administrator**:
 Get-NetAdapter | Select-Object Name, InterfaceIndex, Status, MacAddress
 ```
 
+```powershell
+# (Opsional) lakukan sysprep jika vm yang digunakan berupa clone dari vm yang sudah ada
+C:\Windows\System32\Sysprep\Sysprep.exe /oobe /generalize /shutdown
+```
+setelah itu:
+
+- VM akan mati
+- saat dinyalakan lagi, Windows akan setup ulang identitas mesin
+
 Rename adapter agar mudah dikenali:
 
 ```powershell

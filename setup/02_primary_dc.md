@@ -61,7 +61,7 @@ Rename adapter agar mudah dikenali:
 
 ```powershell
 # Sesuaikan "Ethernet 1" dan "Ethernet 2" dengan nama adapter asli kamu
-Rename-NetAdapter -Name "Ethernet 1" -NewName "PUBLIC"
+Rename-NetAdapter -Name "Ethernet" -NewName "PUBLIC"
 Rename-NetAdapter -Name "Ethernet 2" -NewName "INTERNAL"
 ```
 

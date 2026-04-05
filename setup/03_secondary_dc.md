@@ -41,7 +41,7 @@ Get-NetAdapter | Select-Object Name, InterfaceIndex, Status, MacAddress
 C:\Windows\System32\Sysprep\Sysprep.exe /oobe /generalize /shutdown
 
 # Rename agar mudah dikenali
-Rename-NetAdapter -Name "Ethernet 1" -NewName "PUBLIC"
+Rename-NetAdapter -Name "Ethernet" -NewName "PUBLIC"
 Rename-NetAdapter -Name "Ethernet 2" -NewName "INTERNAL"
 
 # Verifikasi

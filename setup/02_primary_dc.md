@@ -45,10 +45,13 @@ Buka **PowerShell sebagai Administrator**:
 Get-NetAdapter | Select-Object Name, InterfaceIndex, Status, MacAddress
 ```
 
+Lakukan sysprep terlebih dahulu jika vm yang digunakan berupa clone dari vm yang sudah ada
+
 ```powershell
 # (Opsional) lakukan sysprep jika vm yang digunakan berupa clone dari vm yang sudah ada
 C:\Windows\System32\Sysprep\Sysprep.exe /oobe /generalize /shutdown
 ```
+
 setelah itu:
 
 - VM akan mati

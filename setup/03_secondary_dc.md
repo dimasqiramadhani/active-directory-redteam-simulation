@@ -36,17 +36,9 @@ Buka **PowerShell sebagai Administrator**:
 # Lihat semua adapter
 Get-NetAdapter | Select-Object Name, InterfaceIndex, Status, MacAddress
 
-Lakukan sysprep terlebih dahulu jika vm yang digunakan berupa clone dari vm yang sudah ada
 
-```powershell
-# (Opsional) 
+# (Opsional) Lakukan sysprep terlebih dahulu jika vm yang digunakan berupa clone dari vm yang sudah ada
 C:\Windows\System32\Sysprep\Sysprep.exe /oobe /generalize /shutdown
-```
-
-setelah itu:
-
-- VM akan mati
-- saat dinyalakan lagi, Windows akan setup ulang identitas mesin
 
 # Rename agar mudah dikenali
 Rename-NetAdapter -Name "Ethernet 1" -NewName "PUBLIC"

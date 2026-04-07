@@ -34,13 +34,13 @@ Semua teknik serangan dipetakan ke framework **MITRE ATT&CK**.
 
 ## 🏗️ Arsitektur Lab
 
-| VM | Hostname | OS | IP Address | Peran |
-|-----|----------|-----|------------|-------|
-| VM1 | DC1 | Windows Server 2019/2022 | 192.168.56.10 | Primary Domain Controller, DNS |
-| VM2 | DC2 | Windows Server 2019/2022 | 192.168.56.11 | Secondary Domain Controller |
-| VM3 | FILESRV | Windows Server 2019/2022 | 192.168.56.20 | File Server, Service Accounts |
-| VM4 | CLIENT01 | Windows 10/11 | 192.168.56.30 | Workstation Karyawan |
-| VM5 | KALI | Kali Linux (latest) | 192.168.56.40 | Mesin Penyerang |
+| VM  | Hostname | OS                       | IP Address    | Peran                          |
+|-----|----------|--------------------------|---------------|--------------------------------|
+| VM1 | DC1      | Windows Server 2019/2022 | 192.168.56.10 | Primary Domain Controller, DNS |
+| VM2 | DC2      | Windows Server 2019/2022 | 192.168.56.11 | Secondary Domain Controller    |
+| VM3 | FILESRV  | Windows Server 2019/2022 | 192.168.56.20 | File Server, Service Accounts  |
+| VM4 | CLIENT   | Windows 10/11            | 192.168.56.30 | Workstation Karyawan           |
+| VM5 | KALI     | Kali Linux (latest)      | 192.168.56.40 | Mesin Penyerang                |
 
 **Domain:** `corp.local`
 **Subnet:** `192.168.56.0/24`
@@ -64,38 +64,38 @@ Semua teknik serangan dipetakan ke framework **MITRE ATT&CK**.
 
 ## 🗺️ Referensi MITRE ATT&CK
 
-| Teknik | ATT&CK ID | Kategori |
-|--------|-----------|----------|
-| Network Scanning | T1046 | Discovery |
-| LDAP Enumeration | T1018 | Discovery |
-| Password Spraying | T1110.003 | Credential Access |
-| Kerberoasting | T1558.003 | Credential Access |
-| AS-REP Roasting | T1558.004 | Credential Access |
-| LLMNR Poisoning | T1557.001 | Credential Access |
-| OS Credential Dumping | T1003 | Credential Access |
-| Pass-the-Hash | T1550.002 | Lateral Movement |
-| Pass-the-Ticket | T1550.003 | Lateral Movement |
-| Token Impersonation | T1134 | Privilege Escalation |
-| Scheduled Task | T1053.005 | Persistence |
-| Registry Run Keys | T1547.001 | Persistence |
-| Windows Service | T1543.003 | Persistence |
+| Teknik                | ATT&CK ID | Kategori             |
+|-----------------------|-----------|----------------------|
+| Network Scanning      | T1046     | Discovery            |
+| LDAP Enumeration      | T1018     | Discovery            |
+| Password Spraying     | T1110.003 | Credential Access    |
+| Kerberoasting         | T1558.003 | Credential Access    |
+| AS-REP Roasting       | T1558.004 | Credential Access    |
+| LLMNR Poisoning       | T1557.001 | Credential Access    |
+| OS Credential Dumping | T1003     | Credential Access    |
+| Pass-the-Hash         | T1550.002 | Lateral Movement     |
+| Pass-the-Ticket       | T1550.003 | Lateral Movement     |
+| Token Impersonation   | T1134     | Privilege Escalation |
+| Scheduled Task        | T1053.005 | Persistence          |
+| Registry Run Keys     | T1547.001 | Persistence          |
+| Windows Service       | T1543.003 | Persistence          |
 
 ---
 
 ## 🛠️ Tool yang Digunakan
 
-| Tool | Fungsi |
-|------|--------|
-| BloodHound + SharpHound | Visualisasi attack path AD |
-| Impacket | Suite tool Python untuk protokol Windows |
-| CrackMapExec (NetExec) | Swiss army knife untuk pentesting AD |
-| Mimikatz | Ekstraksi kredensial Windows |
-| Rubeus | Serangan Kerberos |
-| Responder | LLMNR/NBT-NS poisoning |
-| enum4linux | Enumerasi SMB/NetBIOS |
-| Evil-WinRM | Remote shell via WinRM |
-| ldapsearch | Enumerasi LDAP |
-| smbclient | Akses SMB share |
+| Tool                    | Fungsi                                   |
+|-------------------------|------------------------------------------|
+| BloodHound + SharpHound | Visualisasi attack path AD               |
+| Impacket                | Suite tool Python untuk protokol Windows |
+| CrackMapExec (NetExec)  | Swiss army knife untuk pentesting AD     |
+| Mimikatz                | Ekstraksi kredensial Windows             |
+| Rubeus                  | Serangan Kerberos                        |
+| Responder               | LLMNR/NBT-NS poisoning                   |
+| enum4linux              | Enumerasi SMB/NetBIOS                    |
+| Evil-WinRM              | Remote shell via WinRM                   |
+| ldapsearch              | Enumerasi LDAP                           |
+| smbclient               | Akses SMB share                          |
 
 ---
 
@@ -128,12 +128,12 @@ ad-redteam-lab/
 │   └── ip_scheme.md                   # Skema IP addressing
 │
 ├── setup/
-│   ├── 01_network_setup.md            # Konfigurasi jaringan virtual
-│   ├── 02_primary_dc.md               # Instalasi Domain Controller utama
-│   ├── 03_secondary_dc.md             # Instalasi Domain Controller kedua
-│   ├── 04_member_server.md            # Instalasi File Server
-│   ├── 05_windows_client.md           # Instalasi workstation Windows
-│   └── 06_kali_setup.md               # Setup mesin Kali Linux
+│   ├── 01_network.md                  # Konfigurasi jaringan virtual
+│   ├── 02_dc1.md                      # Instalasi Domain Controller utama
+│   ├── 03_dc2.md                      # Instalasi Domain Controller kedua
+│   ├── 04_filesrv.md                  # Instalasi File Server
+│   ├── 05_client.md                   # Instalasi workstation Windows
+│   └── 06_kali.md                     # Setup mesin Kali Linux
 │
 ├── active_directory/
 │   ├── users.md                       # Daftar user dan konfigurasi
@@ -173,17 +173,15 @@ ad-redteam-lab/
 
 ## 💻 Kebutuhan Hardware Minimum
 
-| Resource | Minimum | Rekomendasi |
-|----------|---------|-------------|
-| RAM | 16 GB | 32 GB |
-| CPU | 4 Core | 8 Core |
-| Storage | 100 GB SSD | 200 GB SSD |
+| Resource       | Minimum                             | Rekomendasi            |
+|----------------|-------------------------------------|------------------------|
+| RAM            | 16 GB                               | 32 GB                  |
+| CPU            | 4 Core                              | 8 Core                 |
+| Storage        | 100 GB SSD                          | 200 GB SSD             |
 | Virtualization | VirtualBox 7.x / VMware Workstation | VMware Workstation Pro |
 
 ---
 
-## 📄 Lisensi
-
-Project ini dilisensikan di bawah MIT License - lihat file LICENSE untuk detail.
+## 📄 Disclaimer
 
 Project ini dibuat **murni untuk tujuan edukasi** dalam bidang cybersecurity.

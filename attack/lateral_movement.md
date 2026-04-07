@@ -42,13 +42,13 @@ evil-winrm -i 192.168.56.10 -u s.admin -H "e19ccf75ee54e06b06a5907af13cef42"
 
 ### Perbedaan Tool Eksekusi Remote
 
-| Tool | Protokol | Stealth Level | Catatan |
-|------|----------|---------------|---------|
-| psexec | SMB (445) | Rendah | Membuat service, meninggalkan artifact |
-| wmiexec | WMI (135) | Sedang | Tidak membuat service, lebih bersih |
-| smbexec | SMB (445) | Sedang | Mirip psexec tapi via share |
-| evil-winrm | WinRM (5985) | Sedang | Shell interaktif, fitur upload/download |
-| atexec | Task Scheduler | Sedang | Menggunakan scheduled task |
+| Tool       | Protokol       | Stealth Level | Catatan                                 |
+|------------|----------------|---------------|-----------------------------------------|
+| psexec     | SMB (445)      | Rendah        | Membuat service, meninggalkan artifact  |
+| wmiexec    | WMI (135)      | Sedang        | Tidak membuat service, lebih bersih     |
+| smbexec    | SMB (445)      | Sedang        | Mirip psexec tapi via share             |
+| evil-winrm | WinRM (5985)   | Sedang        | Shell interaktif, fitur upload/download |
+| atexec     | Task Scheduler | Sedang        | Menggunakan scheduled task              |
 
 ---
 

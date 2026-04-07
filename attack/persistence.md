@@ -107,12 +107,12 @@ crackmapexec smb 192.168.56.10 -u "s.admin" -p "P@ssw0rd123" \
 
 ### Registry Keys yang Umum Digunakan
 
-| Registry Path | Scope | Kapan Dijalankan |
-|---------------|-------|------------------|
-| `HKCU\...\Run` | Per-user | User login |
-| `HKLM\...\Run` | All users | Any user login |
-| `HKCU\...\RunOnce` | Per-user | Sekali saat login (lalu dihapus) |
-| `HKLM\...\RunOnce` | All users | Sekali saat boot |
+| Registry Path      | Scope     | Kapan Dijalankan                 |
+|--------------------|-----------|----------------------------------|
+| `HKCU\...\Run`     | Per-user  | User login                       |
+| `HKLM\...\Run`     | All users | Any user login                   |   
+| `HKCU\...\RunOnce` | Per-user  | Sekali saat login (lalu dihapus) |
+| `HKLM\...\RunOnce` | All users | Sekali saat boot                 |
 
 ---
 

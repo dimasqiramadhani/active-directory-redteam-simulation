@@ -10,8 +10,8 @@ Lab ini menggunakan **jaringan internal terisolasi** (Host-Only atau Internal Ne
 
 ```
                     ┌─────────────────────────────────────────────┐
-                    │          HOST MACHINE (Laptop/PC)            │
-                    │         Hypervisor: VirtualBox/VMware        │
+                    │          HOST MACHINE (Laptop/PC)           │
+                    │         Hypervisor: VirtualBox/VMware       │
                     └─────────────────┬───────────────────────────┘
                                       │
                                       │ Virtual Network Adapter
@@ -21,7 +21,7 @@ Lab ini menggunakan **jaringan internal terisolasi** (Host-Only atau Internal Ne
               │                       │                           │
               │          ISOLATED INTERNAL NETWORK                │
               │          Subnet: 192.168.56.0/24                  │
-              │          Gateway: N/A (terisolasi)                 │
+              │          Gateway: N/A (terisolasi)                │
               │                                                   │
               │   ┌──────────┐    ┌──────────┐                    │
               │   │   DC1    │    │   DC2    │                    │
@@ -91,14 +91,14 @@ Host-Only Network (VirtualBox) atau VMnet yang terisolasi (VMware) memastikan:
 
 ## Alokasi Resource Per VM
 
-| VM | RAM | vCPU | Disk | Catatan |
-|----|-----|------|------|---------|
-| DC1 | 2 GB | 2 | 40 GB | Minimum untuk AD DS + DNS |
-| DC2 | 2 GB | 2 | 40 GB | Replica DC, bisa 1.5 GB jika RAM terbatas |
-| FILESRV | 2 GB | 2 | 40 GB | File server + service accounts |
-| CLIENT01 | 2 GB | 2 | 40 GB | Windows 10/11 desktop |
-| KALI | 2 GB | 2 | 30 GB | Attacker machine |
-| **TOTAL** | **10 GB** | **10** | **190 GB** | |
+| VM        | RAM       | vCPU   | Disk       | Catatan                                   |
+|-----------|-----------|--------|------------|-------------------------------------------|
+| DC1       | 2 GB      | 2      | 40 GB      | Minimum untuk AD DS + DNS                 |
+| DC2       | 2 GB      | 2      | 40 GB      | Replica DC, bisa 1.5 GB jika RAM terbatas |
+| FILESRV   | 2 GB      | 2      | 40 GB      | File server + service accounts            |
+| CLIENT    | 2 GB      | 2      | 40 GB      | Windows 10/11 desktop                     |
+| KALI      | 2 GB      | 2      | 30 GB      | Attacker machine                          |
+| **TOTAL** | **10 GB** | **10** | **190 GB** |                                           |
 
 ### Tips Optimasi untuk Laptop dengan RAM 16 GB
 

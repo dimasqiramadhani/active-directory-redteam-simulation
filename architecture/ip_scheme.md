@@ -2,13 +2,13 @@
 
 ## Tabel Alokasi IP
 
-| Hostname | IP Address | Subnet Mask | Gateway | DNS Primer | DNS Sekunder |
-|----------|-----------|-------------|---------|------------|-------------|
-| DC1 | 192.168.56.10 | 255.255.255.0 | - | 127.0.0.1 | 192.168.56.11 |
-| DC2 | 192.168.56.11 | 255.255.255.0 | - | 192.168.56.10 | 127.0.0.1 |
-| FILESRV | 192.168.56.20 | 255.255.255.0 | - | 192.168.56.10 | 192.168.56.11 |
-| CLIENT01 | 192.168.56.30 | 255.255.255.0 | - | 192.168.56.10 | 192.168.56.11 |
-| KALI | 192.168.56.40 | 255.255.255.0 | - | 192.168.56.10 | 192.168.56.11 |
+| Hostname | IP Address    | Subnet Mask   | Gateway | DNS Primer    | DNS Sekunder  |
+|----------|---------------|---------------|---------|---------------|-------------- |
+| DC1      | 192.168.56.10 | 255.255.255.0 | -       | 127.0.0.1     | 192.168.56.11 |
+| DC2      | 192.168.56.11 | 255.255.255.0 | -       | 192.168.56.10 | 127.0.0.1     |
+| FILESRV  | 192.168.56.20 | 255.255.255.0 | -       | 192.168.56.10 | 192.168.56.11 |
+| CLIENT   | 192.168.56.30 | 255.255.255.0 | -       | 192.168.56.10 | 192.168.56.11 |
+| KALI     | 192.168.56.40 | 255.255.255.0 | -       | 192.168.56.10 | 192.168.56.11 |
 
 **Catatan:** Gateway dikosongkan karena jaringan ini terisolasi (tidak ada akses internet).
 
@@ -16,10 +16,10 @@
 
 ## Detail Domain
 
-| Parameter | Nilai |
-|-----------|-------|
-| Domain Name | corp.local |
-| NetBIOS Name | CORP |
+| Parameter               | Nilai                         |
+|-------------------------|-------------------------------|
+| Domain Name             | corp.local                    |
+| NetBIOS Name            | CORP                          |
 | Forest Functional Level | Windows Server 2016 (minimum) |
 | Domain Functional Level | Windows Server 2016 (minimum) |
 

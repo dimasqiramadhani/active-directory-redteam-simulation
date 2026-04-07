@@ -182,12 +182,12 @@ mimikatz.exe "privilege::debug" "sekurlsa::wdigest" "exit"
 
 Setelah menjalankan semua skenario, kamu seharusnya memiliki:
 
-| Source | Username | Credential | Metode |
-|--------|----------|------------|--------|
-| Password Spray | j.doe, r.smith, k.brown | Welcome2024! | CrackMapExec/kerbrute |
-| AS-REP Roast | svc_web | WebApp2024! | Impacket GetNPUsers |
-| Kerberoast | svc_backup | Backup2024! | Impacket GetUserSPNs |
-| Kerberoast | svc_sql | SQLService2024! | Impacket GetUserSPNs |
-| File Share | svc_backup, svc_sql | (dari script/config) | SMB enumeration |
-| Responder | (user di CLIENT01) | NTLMv2 hash → crack | LLMNR poisoning |
-| Credential Dump | (logged-in users) | NTLM hash / plaintext | Mimikatz/secretsdump |
+| Source          | Username                | Credential            | Metode                |
+|-----------------|-------------------------|-----------------------|-----------------------|
+| Password Spray  | j.doe, r.smith, k.brown | Welcome2024!          | CrackMapExec/kerbrute |
+| AS-REP Roast    | svc_web                 | WebApp2024!           | Impacket GetNPUsers   |
+| Kerberoast      | svc_backup              | Backup2024!           | Impacket GetUserSPNs  |
+| Kerberoast      | svc_sql                 | SQLService2024!       | Impacket GetUserSPNs  |
+| File Share      | svc_backup, svc_sql     | (dari script/config)  | SMB enumeration       |
+| Responder       | (user di CLIENT01)      | NTLMv2 hash → crack   | LLMNR poisoning       |
+| Credential Dump | (logged-in users)       | NTLM hash / plaintext | Mimikatz/secretsdump  |

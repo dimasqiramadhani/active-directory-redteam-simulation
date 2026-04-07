@@ -28,14 +28,14 @@ nmap -sV -p 21,22,53,80,88,135,139,389,445,464,636,3268,3389,5985 \
 
 **Port penting yang dicari:**
 
-| Port | Service | Indikasi |
-|------|---------|----------|
-| 88 | Kerberos | Domain Controller |
-| 389/636 | LDAP/LDAPS | Domain Controller |
-| 445 | SMB | File sharing, credential relay |
-| 135 | RPC | Remote management |
-| 3389 | RDP | Remote Desktop |
-| 5985 | WinRM | Remote PowerShell |
+| Port    | Service    | Indikasi                       |
+|---------|------------|--------------------------------|
+| 88      | Kerberos   | Domain Controller              |
+| 389/636 | LDAP/LDAPS | Domain Controller              |
+| 445     | SMB        | File sharing, credential relay |
+| 135     | RPC        | Remote management              |
+| 3389    | RDP        | Remote Desktop                 |
+| 5985    | WinRM      | Remote PowerShell              |
 
 ---
 

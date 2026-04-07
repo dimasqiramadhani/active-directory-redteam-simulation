@@ -12,20 +12,20 @@ Seluruh teknik serangan yang dipraktikkan di lab ini dipetakan ke framework MITR
 
 ### Reconnaissance (TA0043)
 
-| ID | Teknik | Skenario Lab | Tool |
-|----|--------|-------------|------|
+| ID        | Teknik                              | Skenario Lab                            | Tool |
+|-----------|-------------------------------------|-----------------------------------------|------|
 | T1595.001 | Active Scanning: Scanning IP Blocks | Network scanning subnet 192.168.56.0/24 | nmap |
 
 ### Discovery (TA0007)
 
-| ID | Teknik | Skenario Lab | Tool |
-|----|--------|-------------|------|
-| T1046 | Network Service Discovery | Port scanning semua target | nmap |
-| T1018 | Remote System Discovery | Menemukan host di domain | nmap, BloodHound |
-| T1087.002 | Account Discovery: Domain Account | Enumerasi user domain via LDAP/Kerberos | ldapsearch, kerbrute, BloodHound |
-| T1069.002 | Permission Groups Discovery: Domain Groups | Enumerasi group membership | ldapsearch, BloodHound, CrackMapExec |
-| T1135 | Network Share Discovery | Enumerasi SMB shares | smbclient, enum4linux, CrackMapExec |
-| T1016 | System Network Configuration Discovery | Mapping jaringan dan DNS | nmap, nslookup |
+| ID        | Teknik                                     | Skenario Lab                            | Tool                                 |
+|-----------|--------------------------------------------|-----------------------------------------|--------------------------------------|
+| T1046     | Network Service Discovery                  | Port scanning semua target              | nmap                                 |
+| T1018     | Remote System Discovery                    | Menemukan host di domain                | nmap, BloodHound                     |
+| T1087.002 | Account Discovery: Domain Account          | Enumerasi user domain via LDAP/Kerberos | ldapsearch, kerbrute, BloodHound     |
+| T1069.002 | Permission Groups Discovery: Domain Groups | Enumerasi group membership              | ldapsearch, BloodHound, CrackMapExec |
+| T1135     | Network Share Discovery                    | Enumerasi SMB shares                    | smbclient, enum4linux, CrackMapExec  |
+| T1016     | System Network Configuration Discovery     | Mapping jaringan dan DNS                | nmap, nslookup                       |
 
 ### Credential Access (TA0006)
 

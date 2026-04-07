@@ -58,19 +58,19 @@ bloodhound-python -u "user" -p "pass" -d "corp.local" -ns 192.168.56.10 -c All -
 
 **Penjelasan:** Impacket adalah swiss army knife untuk pentesting Windows dari Linux. Tool-tool yang sering digunakan:
 
-| Script | Fungsi |
-|--------|--------|
-| `GetNPUsers` | AS-REP Roasting |
-| `GetUserSPNs` | Kerberoasting |
-| `secretsdump` | Credential dumping (DCSync, SAM, LSA) |
-| `psexec` | Remote shell via SMB |
-| `wmiexec` | Remote shell via WMI |
-| `smbexec` | Remote shell via SMB |
-| `smbclient` | Akses SMB share |
-| `atexec` | Remote execution via Scheduled Task |
-| `ticketer` | Membuat Golden/Silver Ticket |
-| `lookupsid` | SID brute forcing untuk enumerasi user |
-| `findDelegation` | Mencari delegation configuration |
+| Script           | Fungsi                                 |
+|------------------|----------------------------------------|
+| `GetNPUsers`     | AS-REP Roasting                        |
+| `GetUserSPNs`    | Kerberoasting                          |
+| `secretsdump`    | Credential dumping (DCSync, SAM, LSA)  |
+| `psexec`         | Remote shell via SMB                   |
+| `wmiexec`        | Remote shell via WMI                   |
+| `smbexec`        | Remote shell via SMB                   |
+| `smbclient`      | Akses SMB share                        |
+| `atexec`         | Remote execution via Scheduled Task    |
+| `ticketer`       | Membuat Golden/Silver Ticket           |
+| `lookupsid`      | SID brute forcing untuk enumerasi user |
+| `findDelegation` | Mencari delegation configuration       |
 
 **Instalasi:**
 ```bash

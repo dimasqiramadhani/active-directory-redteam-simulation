@@ -2,13 +2,13 @@
 
 ## Daftar Group
 
-| Nama Group | Tipe | Member | Tujuan |
-|-----------|------|--------|--------|
-| Domain Admins | Built-in | Administrator, s.admin | Full control atas domain |
-| IT Support | Security | helpdesk, j.doe, m.dev | Akses tool IT, local admin di workstation |
-| HR Users | Security | l.jones, r.smith | Akses share HR |
-| Finance Users | Security | d.wilson, k.brown | Akses share Finance |
-| Remote Access | Security | helpdesk, j.doe, m.dev | Akses RDP dan WinRM |
+| Nama Group    | Tipe     | Member                 | Tujuan                                    |
+|---------------|----------|------------------------|-------------------------------------------|
+| Domain Admins | Built-in | Administrator, s.admin | Full control atas domain                  |
+| IT Support    | Security | helpdesk, j.doe, m.dev | Akses tool IT, local admin di workstation |
+| HR Users      | Security | l.jones, r.smith       | Akses share HR                            |
+| Finance Users | Security | d.wilson, k.brown      | Akses share Finance                       |
+| Remote Access | Security | helpdesk, j.doe, m.dev | Akses RDP dan WinRM                       |
 
 ---
 
@@ -56,11 +56,11 @@ Add-ADGroupMember -Identity "Server Operators" -Members "helpdesk"
 
 ## Misconfiguration Group Membership
 
-| Misconfiguration | Detail | Risiko |
-|-----------------|--------|--------|
-| helpdesk di Server Operators | Bisa manage services di DC | Privilege escalation ke DA |
-| s.admin di Domain Admins | DA dengan password lemah | Lateral movement → domain takeover |
-| j.doe di IT Support | Juga local admin di CLIENT01 | Credential theft dari workstation |
+| Misconfiguration             | Detail                     | Risiko                             |
+|------------------------------|----------------------------|------------------------------------|
+| helpdesk di Server Operators | Bisa manage services di DC | Privilege escalation ke DA         |
+| s.admin di Domain Admins     | DA dengan password lemah   | Lateral movement → domain takeover |
+| j.doe di IT Support          | Juga local admin di CLIENT | Credential theft dari workstation  |
 
 ---
 

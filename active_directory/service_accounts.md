@@ -8,11 +8,11 @@ Membuat service account yang mensimulasikan layanan enterprise (backup, database
 
 ## Daftar Service Account
 
-| Username | SPN | Password | Misconfiguration |
-|----------|-----|----------|------------------|
-| svc_backup | CIFS/filesrv.corp.local | Backup2024! | Kerberoastable, password lemah |
-| svc_sql | MSSQLSvc/filesrv.corp.local:1433 | SQLService2024! | Kerberoastable |
-| svc_web | HTTP/filesrv.corp.local | WebApp2024! | AS-REP Roasting + Kerberoastable |
+| Username   | SPN                              | Password        | Misconfiguration                 |
+|------------|----------------------------------|-----------------|----------------------------------|
+| svc_backup | CIFS/filesrv.corp.local          | Backup2024!     | Kerberoastable, password lemah   |
+| svc_sql    | MSSQLSvc/filesrv.corp.local:1433 | SQLService2024! | Kerberoastable                   |
+| svc_web    | HTTP/filesrv.corp.local          | WebApp2024!     | AS-REP Roasting + Kerberoastable |
 
 ---
 

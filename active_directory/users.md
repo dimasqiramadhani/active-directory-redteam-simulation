@@ -8,20 +8,20 @@ Membuat user account realistis di domain `corp.local` yang mensimulasikan karyaw
 
 ## Daftar User
 
-| Username | Nama Lengkap | Departemen | Password | Catatan |
-|----------|-------------|------------|----------|---------|
-| j.doe | John Doe | IT | Welcome2024! | IT staff, local admin di CLIENT01 |
-| s.admin | Sarah Admin | IT | P@ssw0rd123 | Domain Admin |
-| helpdesk | Help Desk | IT | Helpdesk2024! | IT Support, local admin di beberapa mesin |
-| m.dev | Mike Developer | IT | Developer2024! | Developer |
-| a.intern | Alex Intern | IT | Summer2024! | Intern, password lemah |
-| l.jones | Lisa Jones | HR | HRpass2024! | HR Manager |
-| r.smith | Rachel Smith | HR | Welcome2024! | HR Staff, password reuse |
-| d.wilson | David Wilson | Finance | Finance2024! | Finance Manager |
-| k.brown | Karen Brown | Finance | Welcome2024! | Finance Staff, password reuse |
-| svc_backup | Backup Service | IT (Service) | Backup2024! | Kerberoastable service account |
-| svc_sql | SQL Service | IT (Service) | SQLService2024! | Kerberoastable service account |
-| svc_web | Web Service | IT (Service) | WebApp2024! | Service account, AS-REP Roasting target |
+| Username   | Nama Lengkap   | Departemen   | Password        | Catatan                                   |
+|------------|----------------|--------------|-----------------|-------------------------------------------|
+| j.doe      | John Doe       | IT           | Welcome2024!    | IT staff, local admin di CLIENT           |
+| s.admin    | Sarah Admin    | IT           | P@ssw0rd123     | Domain Admin                              |
+| helpdesk   | Help Desk      | IT           | Helpdesk2024!   | IT Support, local admin di beberapa mesin |
+| m.dev      | Mike Developer | IT           | Developer2024!  | Developer                                 |
+| a.intern   | Alex Intern    | IT           | Summer2024!     | Intern, password lemah                    |
+| l.jones    | Lisa Jones     | HR           | HRpass2024!     | HR Manager                                |
+| r.smith    | Rachel Smith   | HR           | Welcome2024!    | HR Staff, password reuse                  |
+| d.wilson   | David Wilson   | Finance      | Finance2024!    | Finance Manager                           |
+| k.brown    | Karen Brown    | Finance      | Welcome2024!    | Finance Staff, password reuse             |
+| svc_backup | Backup Service | IT (Service) | Backup2024!     | Kerberoastable service account            |
+| svc_sql    | SQL Service    | IT (Service) | SQLService2024! | Kerberoastable service account            |
+| svc_web    | Web Service    | IT (Service) | WebApp2024!     | Service account, AS-REP Roasting target   |
 
 ---
 
@@ -83,12 +83,12 @@ New-ADUser -Name "Karen Brown" -SamAccountName "k.brown" -UserPrincipalName "k.b
 
 ## Kelemahan yang Disengaja (Untuk Latihan)
 
-| Kelemahan | User yang Terdampak | Teknik Serangan |
-|-----------|---------------------|-----------------|
-| Password lemah/predictable | a.intern (`Summer2024!`) | Password Spraying, Brute Force |
-| Password reuse (`Welcome2024!`) | j.doe, r.smith, k.brown | Password Spraying |
-| Domain Admin dengan password lemah | s.admin (`P@ssw0rd123`) | Credential Access → Domain Takeover |
-| Password tidak pernah expire | Semua user | Mengurangi rotasi password |
+| Kelemahan                          | User yang Terdampak      | Teknik Serangan                     |
+|------------------------------------|--------------------------|-------------------------------------|
+| Password lemah/predictable         | a.intern (`Summer2024!`) | Password Spraying, Brute Force      |
+| Password reuse (`Welcome2024!`)    | j.doe, r.smith, k.brown  | Password Spraying                   |
+| Domain Admin dengan password lemah | s.admin (`P@ssw0rd123`)  | Credential Access → Domain Takeover |
+| Password tidak pernah expire       | Semua user               | Mengurangi rotasi password          |
 
 ---
 

@@ -16,15 +16,15 @@ Menginstal CLIENT01 sebagai workstation karyawan yang tergabung ke domain `corp.
 
 ## 5.1 Membuat VM / Menyiapkan Server
 
-| Parameter | Nilai |
-|-----------|-------|
-| Name | CLIENT01 |
-| OS | Windows 10/11 **Pro** atau **Enterprise** (Home tidak bisa join domain) |
-| RAM | 2 GB |
-| CPU | 2 vCPU |
-| Disk | 40 GB |
-| Adapter 1 | PUBLIC — IP public (untuk RDP) |
-| Adapter 2 | INTERNAL — private network (untuk domain) |
+| Parameter | Nilai                                                                   |
+|-----------|-------------------------------------------------------------------------|
+| Name      | CLIENT                                                                  |
+| OS        | Windows 10/11 **Pro** atau **Enterprise** (Home tidak bisa join domain) |
+| RAM       | 2 GB                                                                    |
+| CPU       | 2 vCPU                                                                  |
+| Disk      | 40 GB                                                                   |
+| Adapter 1 | PUBLIC — IP public (untuk RDP)                                          |
+| Adapter 2 | INTERNAL — private network (untuk domain)                               |
 
 ---
 

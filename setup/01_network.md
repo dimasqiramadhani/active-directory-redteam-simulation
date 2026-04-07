@@ -14,36 +14,40 @@ Setiap VM/server memiliki **dua network adapter**:
 Internet / Public Network
         │
    ┌────┴────────────────────────────────────────┐
-   │              ADAPTER 1 (PUBLIC)              │
-   │         IP Public dari ISP/cloud             │
-   │         Untuk: RDP, SSH, akses luar          │
+   │              ADAPTER 1 (PUBLIC)             │
+   │         IP Public dari ISP/cloud            │
+   │         Untuk: RDP, SSH, akses luar         │
    └────┬────────────────────────────────────────┘
         │
    ┌────┴────────────────────────────────────────┐
-   │              SEMUA VM / SERVER               │
+   │              SEMUA VM / SERVER              │
    └────┬────────────────────────────────────────┘
         │
    ┌────┴────────────────────────────────────────┐
-   │            ADAPTER 2 (INTERNAL)              │
-   │         Subnet: 192.168.56.0/24              │
-   │         Untuk: AD, DNS, domain traffic       │
+   │            ADAPTER 2 (INTERNAL)             │
+   │         Subnet: 192.168.56.0/24             │
+   │         Untuk: AD, DNS, domain traffic      │
    └────┬────────────────────────────────────────┘
         │
-   ─────┴──────────────────────────────────────
-   │ DC1(.10) │ DC2(.11) │ FILESRV(.20) │ KALI(.40) │
-   ─────────────────────────────────────────────
+   ┌────┴────────────────────────────────────────┐
+   │                DC1(.10)                     │
+   │                DC2(.11)                     │
+   │                FILESRV(.20)                 │
+   │                CLIENT(.30)                  │ 
+   │                KALI(.40)                    │
+   └─────────────────────────────────────────────┘
 ```
 
 ---
 
 ## Alokasi IP — Adapter INTERNAL
 
-| Hostname | IP Address | Subnet Mask | Peran |
-|----------|-----------|-------------|-------|
-| DC1 | 192.168.56.10 | 255.255.255.0 | Primary DC, DNS |
-| DC2 | 192.168.56.11 | 255.255.255.0 | Replica DC, DNS |
-| FILESRV | 192.168.56.20 | 255.255.255.0 | File Server |
-| KALI | 192.168.56.40 | 255.255.255.0 | Attacker |
+| Hostname | IP Address    | Subnet Mask   | Peran           |
+|----------|---------------|---------------|-----------------|
+| DC1      | 192.168.56.10 | 255.255.255.0 | Primary DC, DNS |
+| DC2      | 192.168.56.11 | 255.255.255.0 | Replica DC, DNS |
+| FILESRV  | 192.168.56.20 | 255.255.255.0 | File Server     |
+| KALI     | 192.168.56.40 | 255.255.255.0 | Attacker        |
 
 **Catatan:** Adapter PUBLIC menggunakan IP yang diberikan oleh ISP/cloud provider masing-masing.
 
@@ -51,13 +55,13 @@ Internet / Public Network
 
 ## Aturan Penting Dual-Adapter
 
-| Aturan | Detail |
-|--------|--------|
-| Default gateway | **Hanya** di adapter PUBLIC |
-| DNS client | Semua adapter menunjuk ke IP **internal** DC (192.168.56.10) |
-| DNS registration | **Matikan** di adapter PUBLIC |
-| Binding order | Adapter INTERNAL harus prioritas lebih tinggi (metric lebih kecil) |
-| DNS Server listen | Hanya di IP internal (berlaku untuk DC1 dan DC2) |
+| Aturan            | Detail                                                             |
+|-------------------|--------------------------------------------------------------------|
+| Default gateway   | **Hanya** di adapter PUBLIC                                        |
+| DNS client        | Semua adapter menunjuk ke IP **internal** DC (192.168.56.10)       |
+| DNS registration  | **Matikan** di adapter PUBLIC                                      |
+| Binding order     | Adapter INTERNAL harus prioritas lebih tinggi (metric lebih kecil) |
+| DNS Server listen | Hanya di IP internal (berlaku untuk DC1 dan DC2)                   |
 
 ---
 
@@ -122,13 +126,13 @@ Step 6  → Setup Kali Linux (attacker)
 
 ## Alokasi Resource Per VM
 
-| VM | RAM | vCPU | Disk | Catatan |
-|----|-----|------|------|---------|
-| DC1 | 2 GB | 2 | 40 GB | AD DS + DNS |
-| DC2 | 2 GB | 2 | 40 GB | Replica DC |
-| FILESRV | 2 GB | 2 | 40 GB | File Server |
-| KALI | 2 GB | 2 | 30 GB | Attacker |
-| **TOTAL** | **8 GB** | **8** | **150 GB** | |
+| VM        | RAM      | vCPU  | Disk       | Catatan     |
+|-----------|----------|-------|------------|-------------|
+| DC1       | 2 GB     | 2     | 40 GB      | AD DS + DNS |
+| DC2       | 2 GB     | 2     | 40 GB      | Replica DC  |
+| FILESRV   | 2 GB     | 2     | 40 GB      | File Server |
+| KALI      | 2 GB     | 2     | 30 GB      | Attacker    |
+| **TOTAL** | **8 GB** | **8** | **150 GB** |             |
 
 ### Tips Optimasi untuk RAM Terbatas
 

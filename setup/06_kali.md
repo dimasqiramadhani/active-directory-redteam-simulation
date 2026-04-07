@@ -10,15 +10,15 @@ Mengkonfigurasi Kali Linux sebagai mesin penyerang dengan dua adapter:
 
 ## 6.1 Membuat VM / Menyiapkan Server
 
-| Parameter | Nilai |
-|-----------|-------|
-| Name | KALI |
-| OS | Kali Linux (latest) |
-| RAM | 2 GB (4 GB jika tersedia) |
-| CPU | 2 vCPU |
-| Disk | 30 GB |
-| eth0 | PUBLIC — IP dari ISP/cloud (untuk SSH, internet) |
-| eth1 | INTERNAL — Host-Only / private network (untuk lab) |
+| Parameter | Nilai                                              |
+|-----------|----------------------------------------------------|
+| Name      | KALI                                               |
+| OS        | Kali Linux (latest)                                |
+| RAM       | 2 GB (4 GB jika tersedia)                          |
+| CPU       | 2 vCPU                                             |
+| Disk      | 30 GB                                              |
+| eth0      | PUBLIC — IP dari ISP/cloud (untuk SSH, internet)   |
+| eth1      | INTERNAL — Host-Only / private network (untuk lab) |
 
 **Rekomendasi:** Download pre-built VM dari [kali.org/get-kali](https://www.kali.org/get-kali/).
 

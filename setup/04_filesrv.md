@@ -22,14 +22,14 @@ Menginstal FILESRV sebagai domain member server dengan peran File Server, servic
 
 ## 4.1 Membuat VM / Menyiapkan Server
 
-| Parameter | Nilai |
-|-----------|-------|
-| Name | FILESRV |
-| OS | Windows Server 2019/2022 |
-| RAM | 2 GB |
-| CPU | 2 vCPU |
-| Disk | 40 GB |
-| Adapter 1 | PUBLIC — IP dari ISP/cloud (untuk RDP) |
+| Parameter | Nilai                                     |
+|-----------|-------------------------------------------|
+| Name      | FILESRV                                   |
+| OS        | Windows Server 2019/2022                  |
+| RAM       | 2 GB                                      |
+| CPU       | 2 vCPU                                    |
+| Disk      | 40 GB                                     |
+| Adapter 1 | PUBLIC — IP dari ISP/cloud (untuk RDP)    |
 | Adapter 2 | INTERNAL — private network (untuk domain) |
 
 ---
